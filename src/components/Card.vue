@@ -1,5 +1,5 @@
 <template>
-  <div  class="product-container">
+  <div class="product-container">
     <div
       class="product-card"
       v-for="(item, i) in infos"
@@ -104,10 +104,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
@@ -121,8 +122,8 @@ export default {
 }
 .product-card {
   position: relative;
-  width: 320px;
-  height: 420px;
+  width: 330px;
+  height: 460px;
   background: #122936;
   border-radius: 20px;
   overflow: hidden;
@@ -144,11 +145,11 @@ export default {
 .product-card .img-bx {
   position: relative;
   width: 100%;
-  height:200px;
+  height:250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  margin-top:15px;
   z-index: 1;
 }
 .product-card .img-bx img {
@@ -207,7 +208,7 @@ export default {
 }
 
 .product-card:hover .btn-bx .buy {
-  top: 340px;
+  top: 390px;
   opacity: 1;
 }
 .product-card .btn-bx .buy:hover {

@@ -38,6 +38,13 @@ export default {
           url: "",
           btnText: "Satın Al",
         },
+        {
+          src: "monitor.png",
+          title: "Gaming Monitor",
+          price: "549.99₺",
+          url: "",
+          btnText: "Satın Al",
+        },
       ],
     };
   },
