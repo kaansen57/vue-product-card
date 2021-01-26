@@ -2,7 +2,7 @@
   <div  class="product-container">
     <div
       class="product-card"
-      v-for="(item, i) in images"
+      v-for="(item, i) in infos"
       :key="i"
       :style="{ backgroundColor: cardColor }"
     >
@@ -71,7 +71,7 @@ export default {
     },
   },
   props: {
-    images: {
+    infos: {
       type: Array,
       required: true,
     },
@@ -116,7 +116,7 @@ export default {
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   min-height: 100vh;
 }
 .product-card {
@@ -144,7 +144,7 @@ export default {
 .product-card .img-bx {
   position: relative;
   width: 100%;
-  height:230px;
+  height:200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,11 +152,11 @@ export default {
   z-index: 1;
 }
 .product-card .img-bx img {
-  max-width: 55%;
+  max-width: 50%;
   transition: 0.5s;
 }
 .product-card:hover .img-bx img {
-  max-width: 50%;
+  max-width: 45%;
 }
 .product-card .content-bx {
   position: relative;

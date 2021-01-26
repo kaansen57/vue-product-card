@@ -1,11 +1,11 @@
 <template>
     <Card
-      :images="images"
+      :infos="infos"
       :cardColor="cardColor"
       :stripColor="stripColor"
       :buttonColor="buttonColor"
       :textColor="textColor"
-    ></Card>
+    />
 </template>
 <script>
 import Card from "./components/Card";
@@ -16,14 +16,13 @@ export default {
       stripColor: "#41b883",
       buttonColor: "#41b881",
       textColor: "#fff",
-      images: [
+      infos: [
         {
           src: "headphone.png",
           title: "Headphone",
           price: "89.99₺",
           url: "",
           btnText: "Satın Al",
-          cardContent: "Content",
         },
         {
           src: "macbook.png",
@@ -31,7 +30,6 @@ export default {
           price: "9.999₺",
           url: "",
           btnText: "Satın Al",
-          cardContent: "Content",
         },
         {
           src: "klavye.png",
@@ -39,95 +37,6 @@ export default {
           price: "49.99₺",
           url: "",
           btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "monitor.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-         {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
-        },
-        {
-          src: "default.png",
-          title: "Gaming Monitor",
-          price: "519.99₺",
-          url: "",
-          btnText: "Satın Al",
-          cardContent: "Content",
         },
       ],
     };
