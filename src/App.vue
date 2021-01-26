@@ -1,5 +1,4 @@
 <template>
-  <div class="">
     <Card
       :images="images"
       :cardColor="cardColor"
@@ -7,9 +6,7 @@
       :buttonColor="buttonColor"
       :textColor="textColor"
     ></Card>
-  </div>
 </template>
-
 <script>
 import Card from "./components/Card";
 export default {

@@ -1,22 +1,22 @@
 <template>
-  <div>
+  <div  class="product-container">
     <div
-      class="card"
+      class="product-card"
       v-for="(item, i) in images"
       :key="i"
       :style="{ backgroundColor: cardColor }"
     >
-      <div class="cardStrip" :style="{ backgroundColor: stripColor }"></div>
-      <div class="imgBx">
+      <div class="card-strip" :style="{ backgroundColor: stripColor }"></div>
+      <div class="img-bx">
         <img :src="require('@/assets/' + item.src)" :alt="item.src" />
       </div>
 
-      <div class="contentBx">
+      <div class="content-bx">
         <h3 :style="customTextColor">{{ item.title | titleLength }}</h3>
         <h2 class="price" :style="customTextColor">{{ item.price }}</h2>
       </div>
 
-      <div class="btnBx">
+      <div class="btn-bx">
         <a
           :href="item.url"
           class="buy"
@@ -27,7 +27,7 @@
           >{{ item.btnText }}
         </a>
       </div>
-      <h1 class="cardContent" v-show="numberShow">{{ i }}</h1>
+      <h1 class="card-content" v-show="numberShow">{{ i }}</h1>
     </div>
   </div>
 </template>
@@ -104,7 +104,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 * {
@@ -113,24 +113,22 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 
-body {
+.product-container {
   display: flex;
-  justify-content: center;
-  width:100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
   min-height: 100vh;
 }
-.card {
- 
+.product-card {
   position: relative;
   width: 320px;
   height: 420px;
   background: #122936;
   border-radius: 20px;
   overflow: hidden;
-  float: left;
   margin: 20px;
 }
-.cardStrip {
+.card-strip {
   position: absolute;
   top: -50%;
   width: 100%;
@@ -139,11 +137,11 @@ body {
   transform: skewY(320deg);
   transition: 0.4s ease;
 }
-.card:hover .cardStrip {
+.product-card:hover .card-strip {
   transform: skewY(400deg);
 }
 
-.card .imgBx {
+.product-card .img-bx {
   position: relative;
   width: 100%;
   height:230px;
@@ -153,14 +151,14 @@ body {
   padding-top: 20px;
   z-index: 1;
 }
-.card .imgBx img {
+.product-card .img-bx img {
   max-width: 55%;
   transition: 0.5s;
 }
-.card:hover .imgBx img {
+.product-card:hover .img-bx img {
   max-width: 50%;
 }
-.card .contentBx {
+.product-card .content-bx {
   position: relative;
   padding: 20px;
   display: flex;
@@ -169,7 +167,7 @@ body {
   flex-direction: column;
   z-index: 1;
 }
-.card .contentBx h3 {
+.product-card .content-bx h3 {
   width: 100%;
   font-size: 18px;
   color: #fff;
@@ -180,19 +178,19 @@ body {
   word-wrap: break-word;
   text-align: center;
 }
-.card .contentBx .price {
+.product-card .content-bx .price {
   text-align: center;
   font-size: 24px;
   color: #fff;
   font-weight: 500;
   letter-spacing: 1px;
 }
-.card .btnBx {
+.product-card .btn-bx {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.card .btnBx .buy {
+.product-card .btn-bx .buy {
   position: absolute;
   top: 430px;
   opacity: 0;
@@ -208,14 +206,14 @@ body {
   margin: 10px;
 }
 
-.card:hover .btnBx .buy {
+.product-card:hover .btn-bx .buy {
   top: 340px;
   opacity: 1;
 }
-.card .btnBx .buy:hover {
+.product-card .btn-bx .buy:hover {
   padding: 10px 70px;
 }
-.card .cardContent {
+.product-card .card-content {
   position: absolute;
   bottom: -20px;
   right: 5px;
