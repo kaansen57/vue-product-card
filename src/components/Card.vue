@@ -12,8 +12,8 @@
       </div>
 
       <div class="contentBx">
-        <h3>{{ item.title }}</h3>
-        <h2 class="price">{{ item.price }}</h2>
+        <h3 :style="customTextColor">{{ item.title | titleLength }}</h3>
+        <h2 class="price" :style="customTextColor">{{ item.price }}</h2>
       </div>
 
       <div class="btnBx">
@@ -23,13 +23,11 @@
           type="button"
           @mouseenter="updateHoverState(true)"
           @mouseleave="updateHoverState(false)"
-          :style="buttonStyle"
+          :style="[customButtonColor, customTextColor]"
           >{{ item.btnText }}
-          </a >
-       
+        </a>
       </div>
-
-      <h1 class="cardContent"> {{i}} </h1>
+      <h1 class="cardContent" v-show="numberShow">{{ i }}</h1>
     </div>
   </div>
 </template>
@@ -39,23 +37,23 @@ export default {
   data() {
     return {
       button: {
-         colorBackd: '#000',
-         padding : "10px 50px",
-         paddingHover : "10px 80px",
-         text : "#fff",
+        colorBackground: "#000",
+        text: "#fff",
       },
-      hoverState: false
+      hoverState: false,
     };
   },
   computed: {
-    buttonStyle() {
-      let  modifier = "";
-      if (this.hoverState)   modifier = "Hover";
-     
+    customButtonColor() {
+      // let  modifier = "";
+      // if (this.hoverState)   modifier = "Hover";
       return {
-        backgroundColor: this.button["colorBackd"],
-        padding:this.button["padding" + modifier],
-        color : this.button["text"]
+        backgroundColor: this.button["colorBackground"],
+      };
+    },
+    customTextColor() {
+      return {
+        color: this.button["text"],
       };
     },
   },
@@ -64,45 +62,45 @@ export default {
       this.hoverState = isHover;
     },
   },
- 
+  filters: {
+    titleLength(value) {
+      if (value.length > 33) {
+        return value.slice(0, 32);
+      }
+      return value;
+    },
+  },
   props: {
     images: {
       type: Array,
       required: true,
-      default: function () {
-        return [
-          {
-            src: "default.png",
-            title: "Default Title",
-            price: "99,99₺",
-            url: "/",
-            btnText: "Default Button",
-            cardContent: "Default",
-          },
-        ];
-      },
     },
     cardColor: {
       type: String,
-      required:true
+      required: true,
     },
     stripColor: {
       type: String,
-      required:true
+      required: true,
     },
-    buttonColor:{
-      type : String,
-      required:true
+    buttonColor: {
+      type: String,
+      required: true,
     },
-    textColor:{
-      type:String,
-      required:false
-    }
+    textColor: {
+      type: String,
+      required: false,
+    },
+    numberShow: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
-  mounted(){
-      this.button.colorBackd = this.buttonColor;
-      this.button.text = this.textColor;
-  }
+  mounted() {
+    this.button.colorBackground = this.buttonColor;
+    this.button.text = this.textColor;
+  },
 };
 </script>
 
@@ -118,10 +116,11 @@ export default {
 body {
   display: flex;
   justify-content: center;
-  align-items: top;
+  width:100%;
   min-height: 100vh;
 }
 .card {
+ 
   position: relative;
   width: 320px;
   height: 420px;
@@ -147,6 +146,7 @@ body {
 .card .imgBx {
   position: relative;
   width: 100%;
+  height:230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,11 +154,11 @@ body {
   z-index: 1;
 }
 .card .imgBx img {
-  max-width: 50%;
+  max-width: 55%;
   transition: 0.5s;
 }
 .card:hover .imgBx img {
-  max-width: 40%;
+  max-width: 50%;
 }
 .card .contentBx {
   position: relative;
@@ -170,14 +170,14 @@ body {
   z-index: 1;
 }
 .card .contentBx h3 {
-  width:100% ;
+  width: 100%;
   font-size: 18px;
   color: #fff;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.5rem;
-   word-wrap: break-word;
+  word-wrap: break-word;
   text-align: center;
 }
 .card .contentBx .price {
@@ -205,21 +205,20 @@ body {
   letter-spacing: 1px;
   transition: 0.5s;
   z-index: 1;
-  margin:10px;
+  margin: 10px;
 }
 
 .card:hover .btnBx .buy {
   top: 340px;
   opacity: 1;
-
 }
-/* .card .btnBx .buy:hover {
-  border: 1px solid #313131;
-} */
+.card .btnBx .buy:hover {
+  padding: 10px 70px;
+}
 .card .cardContent {
   position: absolute;
-  bottom: 0;
-  right: 15px;
+  bottom: -20px;
+  right: 5px;
   font-size: 7rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.2);
