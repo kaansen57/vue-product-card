@@ -67,7 +67,7 @@ export default {
 
 |         Names         |  Types  |                                                Options                                               |  Default  |
 |:---------------------:|:-------:|:----------------------------------------------------------------------------------------------------:|:---------:|
-|    images(required)   |  Array  | [{src:"foo.png", title:"card title", price:"89,99$", url:"https://example.com", btnText:"Buy Now"}]  |           |
+|     infos(required)   |  Array  | [{src:"foo.png", title:"card title", price:"89,99$", url:"https://example.com", btnText:"Buy Now"}]  |           |
 |  cardColor(required)  |  String |                                 cardColor:"#000" \| cardColor:"black"                                |           |
 |  stripColor(required) |  String |                                stripColor:"#000" \| stripColor:"black"                               |           |
 | buttonColor(required) |  String |                               buttonColor:"#000" \| buttonColor:"black"                              |           |
