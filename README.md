@@ -4,14 +4,16 @@ Simple and can be customized product card component
 
 ## Examples
 
-![vue-product-card](https://github.com/kaansen57/vue-product-card/blob/master/vue-product-card.gift?raw=true)
+![vue-product-card](https://github.com/kaansen57/vue-product-card/blob/master/vue-product-card.gif?raw=true)
 
 ## Usage
 
 Install VueProductCard for Vue.js through npm:
 
+```
 npm install vue-product-card
 ```
+
 ### Mount with global
 
 ```vue
